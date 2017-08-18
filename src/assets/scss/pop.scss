@@ -1,0 +1,26 @@
+@import '_mixins.scss';
+
+.pop-remind{
+	display: flex;
+	align-items:center;
+	justify-content: center;
+	position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+    z-index: 9999;
+    p{
+    	display: inline-block;
+	    padding: pxTorem(32px) pxTorem(34px);
+	    max-width: pxTorem(500px);
+	    line-height: pxTorem(28px);
+	    font-size: pxTorem(28px);
+	    text-align: center;
+	    color: #fff;
+	    word-wrap: break-word;
+	    border-radius: 6px;
+	    background-color: rgba(127,127,127,0.9);
+    }
+}

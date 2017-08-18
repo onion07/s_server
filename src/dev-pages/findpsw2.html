@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title><%= htmlWebpackPlugin.options.title %></title>
+	<script>
+	    (function (doc, win) {
+	        var docEl = doc.documentElement,
+	            isIOS = navigator.userAgent.match(/iphone|ipod|ipad/gi),
+	            dpr = isIOS ? Math.min(win.devicePixelRatio, 3) : 1,
+	            scale = 1 ,
+	            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize';
+
+	        docEl.dataset.dpr = dpr;
+
+	        var metaEl = doc.createElement('meta');
+	        metaEl.name = 'viewport';
+	        metaEl.content = 'initial-scale=' + scale + ', maximum-scale=' + scale + ', minimum-scale=' + scale;
+	        docEl.firstElementChild.appendChild(metaEl);
+
+	        var recalc = function () {
+	            var width = docEl.getBoundingClientRect().width;
+	            if (width / dpr > 750) {
+	                width = 750 * dpr;
+	            }
+	            if (width / dpr > 600) {
+	            width = 600 * dpr;
+	        }
+				var rem = width / 10;
+				docEl.style.fontSize = rem + 'px';
+	        };
+	        recalc();
+	        if (!doc.addEventListener) return;
+	        win.addEventListener(resizeEvt, recalc, false);
+	    })(document, window);
+</script>
+<meta name="apple-touch-fullscreen" content="yes" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="format-detection" content="telephone=no" />
+<meta property="qc:admins" content="362076462264125475456367" />
+<meta property="wb:webmaster" content="bcc00827e93d2eed" />	
+</head>
+<body>
+
+
+<script src="vue.fastclick.js" charset="utf-8"></script>
+<!-- <script src="../../dist/reg.js"></script> -->
+	
+<!-- <%=htmlWebpackPlugin.files.webpackManifest%> -->
+
+<!-- 头部组件 -->
+<header id="compHeader">
+	<head-component titles="找回密码"><head-component/>
+</header>
+<!-- 内容组件 -->
+<main id="findpswForm_2"></main>
+
+<footer></footer>
+
+</body>
+</html>

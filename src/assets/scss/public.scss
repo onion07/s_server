@@ -1,0 +1,23 @@
+@import './_reset.scss';
+@import './_mixins.scss';
+
+*{
+    box-sizing: border-box;
+}
+body{
+	color: #333333;
+	font-family:" \5FAE\8F6F\96C5\9ED1";
+}
+.main{
+	padding-left: pxTorem(40px);
+	padding-right: pxTorem(40px);
+}
+i,em{
+	font-style: normal;
+}
+input::-webkit-input-placeholder{
+    color: #ccc;  
+} 
+input::-moz-input-placeholder{
+    color: #ccc;  
+} 

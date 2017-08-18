@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title><%= htmlWebpackPlugin.options.title %></title>
+	<script>
+	    (function (doc, win) {
+	        var docEl = doc.documentElement,
+	            isIOS = navigator.userAgent.match(/iphone|ipod|ipad/gi),
+	            dpr = isIOS ? Math.min(win.devicePixelRatio, 3) : 1,
+	            scale = 1 ,
+	            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize';
+
+	        docEl.dataset.dpr = dpr;
+
+	        var metaEl = doc.createElement('meta');
+	        metaEl.name = 'viewport';
+	        metaEl.content = 'initial-scale=' + scale + ', maximum-scale=' + scale + ', minimum-scale=' + scale;
+	        docEl.firstElementChild.appendChild(metaEl);
+
+	        var recalc = function () {
+	            var width = docEl.getBoundingClientRect().width;
+	            if (width / dpr > 750) {
+	                width = 750 * dpr;
+	            }
+	            if (width / dpr > 600) {
+	            width = 600 * dpr;
+	        }
+				var rem = width / 10;
+				docEl.style.fontSize = rem + 'px';
+	        };
+	        recalc();
+	        if (!doc.addEventListener) return;
+	        win.addEventListener(resizeEvt, recalc, false);
+	    })(document, window);
+</script>
+<meta name="apple-touch-fullscreen" content="yes" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="format-detection" content="telephone=no" />
+<meta property="qc:admins" content="362076462264125475456367" />
+<meta property="wb:webmaster" content="bcc00827e93d2eed" />	
+</head>
+<body class="gray-body">
+	<script src="vue.fastclick.js" charset="utf-8"></script>
+<!-- 头部组件 -->
+<header id="compHeader">
+	<head-component titles="已发货"><head-component/>
+</header>
+<!-- 内容 -->
+
+<main class="order order-send">
+	<section class="order-general">	
+		<section class="section-block padding20-le-rg status">
+			<div class="block-wrap">
+				<div class="block-wrap-title">订单状态：</div>
+				<div class="block-wrap-declaraction font32">已发货</div>
+			</div>
+		</section>
+		<section class="section-block padding20-le-rg">
+			<div class="block-wrap">
+				<div class="block-wrap-title">订&nbsp;&nbsp;单&nbsp;&nbsp;号：</div>
+				<p class="block-wrap-declaraction">59860260380768</p>
+			</div>
+			<div class="block-wrap">
+				<div class="block-wrap-title">支付方式：</div>
+				<p class="block-wrap-declaraction">微信支付</p>
+			</div>
+			<div class="block-wrap">
+				<div class="block-wrap-title">下单时间：</div>
+				<p class="block-wrap-declaraction">2016-11-11 15：35</p>
+			</div>
+		</section>
+		<section class="section-block padding20-le-rg logistical-block">
+
+			<div class="block-wrap-le">
+			   <img class="logistical-icon" src="assets/img/icon/lgt.png" alt="">
+			</div>
+			<div class="block-wrap-rg">
+				<div class="wrap-rg-top">
+					<p class="logistical-mesg">深圳市大冲速递营销安排投递，投递员姓名：张三
+					<br/>联系电话：13800138000
+					</p>
+				</div>
+				<div class="wrap-rg-bootom">
+					<div class="logistical-time">2016-08-03 15:09:09</div>
+				</div>
+			</div>
+		</section>
+		<section class=" adress-block section-block padding20-le-rg">
+
+			<div class="block-wrap-le">
+			   <img class="map-icon" src="assets/img/icon/map.png" alt="">
+			</div>
+			<div class="block-wrap-rg">
+				<div class="wrap-rg-top">
+					<em class="adress-user">小五</em>
+					<span class="number">13546656569</span>
+				</div>
+				<div class="wrap-rg-bootom">
+					<p>广东省深圳市南山区科兴科学园c3-6楼</p>
+				</div>
+			</div>
+		</section>
+	</section>
+	<section class=" product-block section-block">
+		<h2 class="list-title">德国1号仓</h2>
+		<section class="product-list padding20-le-rg">
+			<ul>
+				<li>
+					<div class="product-list-left">
+						<a href="#">
+							<img src="assets/img/product1.png" alt="">
+						</a>
+					</div>
+					<div class="product-list-right">
+						<p class="bigger-detail">
+							<a href="#"><i class="red">【赠品】</i>Aptamil 爱他美幼儿配方奶粉2+(2岁以上）澳洲幼儿配方金装1段幼儿配装方金装1段幼儿配装方儿配装方金装1段幼儿配装方</a>
+						</p>
+						<div class="category-labels">
+							<div class="p-label">
+								<span>颜色：</span>
+								<i>樱桃红</i>
+							</div>
+							<div class="p-label">
+								<span>尺码：</span>
+								<i>200ml</i>
+							</div>
+						</div>
+						<div class="number-mix to-bottom">
+							<em class="mid-price">€238.08</em>
+						</div>
+					</div>
+					<div class="product-num">x2</div>
+				</li>
+				<li>
+					<div class="product-list-left">
+						<a href="#">
+							<img src="assets/img/product1.png" alt="">
+						</a>
+					</div>
+					<div class="product-list-right">
+						<p class="bigger-detail">
+							<a href="#">Aptamil 爱他美幼儿配方奶粉2+(2岁以上）澳洲幼儿配方金装1段幼儿配装方金装1段幼儿配装方儿配装方金装1段幼儿配装方</a>
+						</p>
+						<div class="category-labels">
+							<div class="p-label">
+								<span>颜色：</span>
+								<i>樱桃红</i>
+							</div>
+							<div class="p-label">
+								<span>尺码：</span>
+								<i>200ml</i>
+							</div>
+						</div>
+						<div class="number-mix to-bottom">
+							<em class="mid-price">€238.08</em>
+						</div>
+					</div>
+					<div class="product-num">x2</div>
+				</li>
+				<li>
+					<div class="product-list-left">
+						<a href="#">
+							<img src="assets/img/product1.png" alt="">
+						</a>
+					</div>
+					<div class="product-list-right">
+						<p class="bigger-detail">
+							<a href="#">Aptamil 爱他美幼儿配方奶粉2+(2岁以上）澳洲幼儿配方金装1段幼儿配装方金装1段幼儿配装方儿配装方金装1段幼儿配装方</a>
+						</p>
+						<div class="category-labels">
+							<div class="p-label">
+								<span>颜色：</span>
+								<i>樱桃红</i>
+							</div>
+							<div class="p-label">
+								<span>尺码：</span>
+								<i>200ml</i>
+							</div>
+						</div>
+						<div class="number-mix to-bottom">
+							<em class="mid-price">€238.08</em>
+						</div>
+					</div>
+					<div class="product-num">x2</div>
+				</li>
+			</ul>
+		</section>
+	</section>
+	<section class="orderDetail-block section-block">
+		<h2 class="list-title">订单明细</h2>
+		<section class="orderDetail-list padding20-le-rg">
+			<ul>
+				<li>
+					<div class="list-block">
+						<span class="list-block-left font26-c999">商品总金额</span>
+						<span class="list-block-right"><em class="mid-price">€238.08</em></span>
+					</div>
+				</li>
+				<li>
+					<div class="list-block">
+						<span class="list-block-left font26-c999">商品总优惠</span>
+						<span class="list-block-right"><em class="mid-normal-price black-price">-€23.08</em></span>
+					</div>
+				</li>
+				<li>
+					<div class="list-block">
+						<span class="list-block-left font26-c999">运费</span>
+						<span class="list-block-right"><em class="mid-normal-price">€238.08</em></span>
+					</div>
+				</li>
+				<li>
+					<div class="list-block">
+						<span class="list-block-left font26-c999">运费总优惠</span>
+						<span class="list-block-right"><em class="mid-normal-price black-price">-€238.08</em></span>
+					</div>
+				</li>
+				<li>
+					<div class="list-block">
+						<span class="list-block-left font26-c999">优惠券</span>
+						<span class="list-block-right"><em class="mid-normal-price black-price">-€238.08</em></span>
+					</div>
+				</li>
+				<li>
+					<div class="list-block">
+						<span class="list-block-left font26-c999">关税（商家承担）</span>
+						<span class="list-block-right"><em class="mid-normal-price through-font">€238.08</em></span>
+					</div>
+				</li>
+			</ul>
+		</section>
+		<section class="list-footer padding20-le-rg">
+			<h3>
+				<span class="font26-c999">实付款：</span>
+				<em class="big-price">€210.00</em>
+			</h3>
+			
+		</section>
+	</section>
+</main>
+
+<section class="like-itmes">
+	<h2>猜你喜欢</h2>
+	<section class="like-itmes-list">
+		<ul>
+			<li>
+				<div class="list-wrap">
+					<div class="img-wrap">
+						<a href="#">
+							<img src="assets/img/menu-img.png" alt="">
+						</a>
+					</div>
+					<div class="labels-box">
+						<span class="red-bg">加价购</span>
+						<span class="red-bg">限时抢</span>
+						<span class="red-bg">满件包邮</span>
+					</div>
+					<p class="big-title">
+						<a href="#">knoppers牛奶榛子巧克力威化饼干家庭装 24包knoppers牛奶榛子巧克力威化饼干家庭装 24包knoppers牛奶榛子巧克力威化饼干家庭装 24包</a>
+					</p>
+					<div class="number-mix">
+						<em class="big-price">€238.08</em>
+						<i class="through-font">€258.08</i>
+					</div>
+					<div class="gray-p">参考价：¥1235.00</div>
+				</div>
+			</li>
+			<li>
+				<div class="list-wrap">
+					<div class="img-wrap">
+						<a href="#">
+							<img src="assets/img/menu-img.png" alt="">
+						</a>
+					</div>
+					<div class="labels-box">
+						<span class="red-bg">加价购</span>
+						<span class="red-bg">限时抢</span>
+						<span class="red-bg">满件包邮</span>
+					</div>
+					<p class="big-title">
+						<a href="#">knoppers牛奶榛子巧克力威化饼干家庭装 24包</a>
+					</p>
+					<div class="number-mix">
+						<em class="big-price">€238.08</em>
+						<i class="through-font">€258.08</i>
+					</div>
+					<div class="gray-p">参考价：¥1235.00</div>
+				</div>
+			</li>
+			<li>
+				<div class="list-wrap">
+					<div class="img-wrap">
+						<a href="#">
+							<img src="assets/img/menu-img.png" alt="">
+						</a>
+					</div>
+					<div class="labels-box">
+						<span class="red-bg">加价购</span>
+						<span class="red-bg">限时抢</span>
+						<span class="red-bg">满件包邮</span>
+					</div>
+					<p class="big-title">
+						<a href="#">knoppers牛奶榛子巧克力威化饼干家庭装 24包</a>
+					</p>
+					<div class="number-mix">
+						<em class="big-price">€238.08</em>
+						<i class="through-font">€258.08</i>
+					</div>
+					<div class="gray-p">参考价：¥1235.00</div>
+				</div>
+			</li>
+			<li>
+				<div class="list-wrap">
+					<div class="img-wrap">
+						<a href="#">
+							<img src="assets/img/menu-img.png" alt="">
+						</a>
+					</div>
+					<div class="labels-box">
+						<span class="red-bg">加价购</span>
+						<span class="red-bg">限时抢</span>
+						<span class="red-bg">满件包邮</span>
+					</div>
+					<p class="big-title">
+						<a href="#">knoppers牛奶榛子巧克力威化饼干家庭装 24包</a>
+					</p>
+					<div class="number-mix">
+						<em class="big-price">€238.08</em>
+						<i class="through-font">€258.08</i>
+					</div>
+					<div class="gray-p">参考价：¥1235.00</div>
+				</div>
+			</li>
+		</ul>
+	</section>
+</section>
+
+<section class="order-footer section-block">
+	<a href="#" class="mid-btn">查看物流</a>
+	<a href="#" class="mid-btn buy-again">再次购买</a>
+</section>
+</body>
+</html>

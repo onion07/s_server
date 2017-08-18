@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title><%= htmlWebpackPlugin.options.title %></title>
+	<script>
+	    (function (doc, win) {
+	        var docEl = doc.documentElement,
+	            isIOS = navigator.userAgent.match(/iphone|ipod|ipad/gi),
+	            dpr = isIOS ? Math.min(win.devicePixelRatio, 3) : 1,
+	            scale = 1 ,
+	            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize';
+
+	        docEl.dataset.dpr = dpr;
+
+	        var metaEl = doc.createElement('meta');
+	        metaEl.name = 'viewport';
+	        metaEl.content = 'initial-scale=' + scale + ', maximum-scale=' + scale + ', minimum-scale=' + scale;
+	        docEl.firstElementChild.appendChild(metaEl);
+
+	        var recalc = function () {
+	            var width = docEl.getBoundingClientRect().width;
+	            if (width / dpr > 750) {
+	                width = 750 * dpr;
+	            }
+	            if (width / dpr > 600) {
+	            width = 600 * dpr;
+	        }
+				var rem = width / 10;
+				docEl.style.fontSize = rem + 'px';
+	        };
+	        recalc();
+	        if (!doc.addEventListener) return;
+	        win.addEventListener(resizeEvt, recalc, false);
+	    })(document, window);
+</script>
+<meta name="apple-touch-fullscreen" content="yes" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="format-detection" content="telephone=no" />
+<meta property="qc:admins" content="362076462264125475456367" />
+<meta property="wb:webmaster" content="bcc00827e93d2eed" />	
+</head>
+<body class="gray-body">
+	<script src="vue.fastclick.js" charset="utf-8"></script>
+<!-- 头部组件 -->
+<header id="compHeader">
+	<head-component titles="我的订单"><head-component/>
+</header>
+<!-- 内容 -->
+
+<main class="order myorder-block">
+	<section class="top-tab">
+		<div class="top-tab-wrap white-block">
+			<a class="a-tab cur" href="javascript:void(0);">全部</span></a>
+			<a class="a-tab" href="javascript:void(0);">待付款</a>
+			<a class="a-tab" href="javascript:void(0);">已支付</a>
+			<a class="a-tab" href="javascript:void(0);">已发货</a>
+			<a class="a-tab" href="javascript:void(0);">已取消</a>
+		</div>
+	</section>
+	<section class="product-block section-block">
+		<h2 class="list-title">
+			<div class="sec-left">
+				订单号：<span>692749794332</span>
+			</div>
+			<div class="sec-right"><span class="red">待付款</span></div>
+		</h2>
+		<section class="product-list padding20-le-rg">
+			<ul>
+				<li>
+					<div class="product-list-left">
+						<a href="#">
+							<img src="assets/img/product1.png" alt="">
+						</a>
+					</div>
+					<div class="product-list-right">
+						<p class="bigger-detail">
+							<a href="#"><i class="red">【赠品】</i>Aptamil 爱他美幼儿配方奶粉2+(2岁以上）澳洲幼儿配方金装1段幼儿配装方金装1段幼儿配装方儿配装方金装1段幼儿配装方</a>
+						</p>
+						<div class="category-labels">
+							<div class="p-label">
+								<span>颜色：</span>
+								<i>樱桃红</i>
+							</div>
+							<div class="p-label">
+								<span>尺码：</span>
+								<i>200ml</i>
+							</div>
+						</div>
+						<div class="number-mix to-bottom">
+							<em class="mid-price">€238.08</em>
+						</div>
+					</div>
+					<div class="product-num">x2</div>
+				</li>
+				<li>
+					<div class="product-list-left">
+						<a href="#">
+							<img src="assets/img/product1.png" alt="">
+						</a>
+					</div>
+					<div class="product-list-right">
+						<p class="bigger-detail">
+							<a href="#">Aptamil 爱他美幼儿配方奶粉2+(2岁以上）澳洲幼儿配方金装1段幼儿配装方金装1段幼儿配装方儿配装方金装1段幼儿配装方</a>
+						</p>
+						<div class="category-labels">
+							<div class="p-label">
+								<span>颜色：</span>
+								<i>樱桃红</i>
+							</div>
+							<div class="p-label">
+								<span>尺码：</span>
+								<i>200ml</i>
+							</div>
+						</div>
+						<div class="number-mix to-bottom">
+							<em class="mid-price">€238.08</em>
+						</div>
+					</div>
+					<div class="product-num">x2</div>
+				</li>
+				<li>
+					<div class="product-list-left">
+						<a href="#">
+							<img src="assets/img/product1.png" alt="">
+						</a>
+					</div>
+					<div class="product-list-right">
+						<p class="bigger-detail">
+							<a href="#">Aptamil 爱他美幼儿配方奶粉2+(2岁以上）澳洲幼儿配方金装1段幼儿配装方金装1段幼儿配装方儿配装方金装1段幼儿配装方</a>
+						</p>
+						<div class="category-labels">
+							<div class="p-label">
+								<span>颜色：</span>
+								<i>樱桃红</i>
+							</div>
+							<div class="p-label">
+								<span>尺码：</span>
+								<i>200ml</i>
+							</div>
+						</div>
+						<div class="number-mix to-bottom">
+							<em class="mid-price">€238.08</em>
+						</div>
+					</div>
+					<div class="product-num">x2</div>
+				</li>
+			</ul>
+		</section>
+		<div class="product-block-footer white-block">
+			<div class="product-footer-left">
+				<div class="block-wrap">
+					<div class="block-wrap-title">实付款：</div>
+					<div class="mid-price">€238.08</div>
+				</div>
+			</div>
+			<div class="product-footer-right">
+				<a class="little-btn red-btn" href="#">去支付</a>
+				<a class="little-btn back-btn" href="#">订单详情</a>
+			</div>
+		</div>
+	</section>
+	
+	<section class="product-block section-block">
+		<h2 class="list-title">
+			<div class="sec-left">
+				订单号：<span>692749794332</span>
+			</div>
+			<div class="sec-right"><span class="gray-font">已取消</span></div>
+		</h2>
+		<section class="product-list padding20-le-rg">
+			<ul>
+				<li>
+					<div class="product-list-left">
+						<a href="#">
+							<img src="assets/img/product1.png" alt="">
+						</a>
+					</div>
+					<div class="product-list-right">
+						<p class="bigger-detail">
+							<a href="#"><i class="red">【赠品】</i>Aptamil 爱他美幼儿配方奶粉2+(2岁以上）澳洲幼儿配方金装1段幼儿配装方金装1段幼儿配装方儿配装方金装1段幼儿配装方</a>
+						</p>
+						<div class="category-labels">
+							<div class="p-label">
+								<span>颜色：</span>
+								<i>樱桃红</i>
+							</div>
+							<div class="p-label">
+								<span>尺码：</span>
+								<i>200ml</i>
+							</div>
+						</div>
+						<div class="number-mix to-bottom">
+							<em class="mid-price">€238.08</em>
+						</div>
+					</div>
+					<div class="product-num">x2</div>
+				</li>
+				<li>
+					<div class="product-list-left">
+						<a href="#">
+							<img src="assets/img/product1.png" alt="">
+						</a>
+					</div>
+					<div class="product-list-right">
+						<p class="bigger-detail">
+							<a href="#">Aptamil 爱他美幼儿配方奶粉2+(2岁以上）澳洲幼儿配方金装1段幼儿配装方金装1段幼儿配装方儿配装方金装1段幼儿配装方</a>
+						</p>
+						<div class="category-labels">
+							<div class="p-label">
+								<span>颜色：</span>
+								<i>樱桃红</i>
+							</div>
+							<div class="p-label">
+								<span>尺码：</span>
+								<i>200ml</i>
+							</div>
+						</div>
+						<div class="number-mix to-bottom">
+							<em class="mid-price">€238.08</em>
+						</div>
+					</div>
+					<div class="product-num">x2</div>
+				</li>
+			</ul>
+		</section>
+		<div class="product-block-footer white-block">
+			<div class="product-footer-left">
+				<div class="block-wrap">
+					<div class="block-wrap-title">实付款：</div>
+					<div class="mid-price">€238.08</div>
+				</div>
+			</div>
+			<div class="product-footer-right">
+				<a class="little-btn back-btn" href="#">再次购买</a>
+				<a class="little-btn back-btn" href="#">订单详情</a>
+			</div>
+		</div>
+	</section>
+
+	<section class="product-block section-block">
+		<h2 class="list-title">
+			<div class="sec-left">
+				订单号：<span>692749794332</span>
+			</div>
+			<div class="sec-right"><span class="">已支付</span></div>
+		</h2>
+		<section class="product-list padding20-le-rg">
+			<ul>
+				<li>
+					<div class="product-list-left">
+						<a href="#">
+							<img src="assets/img/product1.png" alt="">
+						</a>
+					</div>
+					<div class="product-list-right">
+						<p class="bigger-detail">
+							<a href="#">Aptamil 爱他美幼儿配方奶粉2+(2岁以上）澳洲幼儿配方金装1段幼儿配装方金装1段幼儿配装方儿配装方金装1段幼儿配装方</a>
+						</p>
+						<div class="category-labels">
+							<div class="p-label">
+								<span>颜色：</span>
+								<i>樱桃红</i>
+							</div>
+							<div class="p-label">
+								<span>尺码：</span>
+								<i>200ml</i>
+							</div>
+						</div>
+						<div class="number-mix to-bottom">
+							<em class="mid-price">€238.08</em>
+						</div>
+					</div>
+					<div class="product-num">x2</div>
+				</li>
+			</ul>
+		</section>
+		<div class="product-block-footer white-block">
+			<div class="product-footer-left">
+				<div class="block-wrap">
+					<div class="block-wrap-title">实付款：</div>
+					<div class="mid-price">€238.08</div>
+				</div>
+			</div>
+			<div class="product-footer-right">
+				<a class="little-btn back-btn" href="#">再次购买</a>
+				<a class="little-btn back-btn" href="#">订单详情</a>
+			</div>
+		</div>
+	</section>
+
+	 
+
+	<section class="order-footer">
+		<p class="little-p footer-p">没有更多商品了~</p>
+	</section>
+</main>
+
+</body>
+</html>

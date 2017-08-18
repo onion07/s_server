@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title><%= htmlWebpackPlugin.options.title %></title>
+	<script>
+	    (function (doc, win) {
+	        var docEl = doc.documentElement,
+	            isIOS = navigator.userAgent.match(/iphone|ipod|ipad/gi),
+	            dpr = isIOS ? Math.min(win.devicePixelRatio, 3) : 1,
+	            scale = 1 ,
+	            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize';
+
+	        docEl.dataset.dpr = dpr;
+
+	        var metaEl = doc.createElement('meta');
+	        metaEl.name = 'viewport';
+	        metaEl.content = 'initial-scale=' + scale + ', maximum-scale=' + scale + ', minimum-scale=' + scale;
+	        docEl.firstElementChild.appendChild(metaEl);
+
+	        var recalc = function () {
+	            var width = docEl.getBoundingClientRect().width;
+	            if (width / dpr > 750) {
+	                width = 750 * dpr;
+	            }
+	            if (width / dpr > 600) {
+	            width = 600 * dpr;
+	        }
+				var rem = width / 10;
+				docEl.style.fontSize = rem + 'px';
+	        };
+	        recalc();
+	        if (!doc.addEventListener) return;
+	        win.addEventListener(resizeEvt, recalc, false);
+	    })(document, window);
+</script>
+<meta name="apple-touch-fullscreen" content="yes" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="format-detection" content="telephone=no" />
+<meta property="qc:admins" content="362076462264125475456367" />
+<meta property="wb:webmaster" content="bcc00827e93d2eed" />	
+</head>
+<body class="gray-body">
+	<script src="vue.fastclick.js" charset="utf-8"></script>
+<!-- 头部组件 -->
+<header id="compHeader">
+	<head-component titles="浏览足迹"><head-component/>
+	<!-- <head-component titles="已取消"><head-component/> -->
+	<!-- <head-component titles="暂无物流"><head-component/> -->
+</header>
+<!-- 内容 -->
+
+<main class="browsing-block full-block">
+	<section class=" product-block white-block">
+		<section class="product-list padding20-le-rg">
+			<ul>
+				<li>
+					<div class="shown-wrap">
+						<div class="product-list-left">
+							<a href="#">
+								<img src="assets/img/browsingImg.png" alt="">
+	                        </a>
+	                        <div class="sell-tip sc-tip shown">
+	                        	<p>比收藏时降 €5.00</p>
+	                        </div>
+                        	<div class="sell-tip gray-tip">
+                        		<p>已下架</p>
+                        	</div>
+						</div>
+						<div class="product-list-right">
+	                        <p class="big-title">
+	                            <a href="#">knoppers牛奶榛子巧克力威化饼干家庭装 24包knoppers牛奶榛子巧克力威化饼干家庭装 24包knoppers牛奶榛子巧克力威化饼干家庭装 24包</a>
+	                        </p>
+	                        <div class="labels-box">
+	                            <span class="red-bg">加价购</span>
+	                            <span class="red-bg">限时抢</span>
+	                            <span class="red-bg">满件包邮</span>
+	                        </div>
+	                        <div class="number-mix">
+	                            <em class="big-price">€238.08</em>
+	                            <i class="through-font">€258.08</i>
+	                        </div>
+	                        <div class="gray-p">参考价：¥1235.00</div>
+	                    </div>
+	                    <div class="shopping-cart">
+	                    	<span class="shopping-cart-btn"></span>
+	                    </div>
+					</div>
+					<div class="hidden-wrap">
+	                    <a href="javascript:void(0);" class="delete-btn">删除</a>
+					</div>
+				</li>
+				<li>
+					<div class="shown-wrap sold-out">
+						<div class="product-list-left">
+							<a href="#">
+								<img src="assets/img/browsingImg.png" alt="">
+	                        </a>
+	                        <div class="sell-tip sc-tip ">
+	                        	<p>比收藏时降 €5.00</p>
+	                        </div>
+                        	<div class="sell-tip gray-tip shown">
+                        		<p>已下架</p>
+                        	</div>
+						</div>
+						<div class="product-list-right">
+	                        <p class="big-title">
+	                            <a href="#">knoppers牛奶榛子巧克力威化饼干家庭装 24包knoppers牛奶榛子巧克力威化饼干家庭装 24包knoppers牛奶榛子巧克力威化饼干家庭装 24包</a>
+	                        </p>
+	                        <div class="labels-box">
+	                            <span class="red-bg">加价购</span>
+	                            <span class="red-bg">限时抢</span>
+	                            <span class="red-bg">满件包邮</span>
+	                        </div>
+	                        <div class="number-mix">
+	                            <em class="big-price">€238.08</em>
+	                            <i class="through-font">€258.08</i>
+	                        </div>
+	                        <div class="gray-p">参考价：¥1235.00</div>
+	                    </div>
+	                    <div class="shopping-cart">
+	                    	<span class="shopping-cart-btn"></span>
+	                    </div>
+					</div>
+					<div class="hidden-wrap">
+	                    <a href="javascript:void(0);" class="delete-btn">删除</a>
+					</div>
+				</li>
+				<li>
+					<div class="shown-wrap taken-out">
+						<div class="product-list-left">
+							<a href="#">
+								<img src="assets/img/browsingImg.png" alt="">
+	                        </a>
+	                        <div class="sell-tip sc-tip ">
+	                        	<p>比收藏时降 €5.00</p>
+	                        </div>
+                        	<div class="sell-tip gray-tip shown">
+                        		<p>已下架</p>
+                        	</div>
+						</div>
+						<div class="product-list-right">
+	                        <p class="big-title">
+	                            <a href="#">knoppers牛奶榛子巧克力威化饼干家庭装 24包knoppers牛奶榛子巧克力威化饼干家庭装 24包knoppers牛奶榛子巧克力威化饼干家庭装 24包</a>
+	                        </p>
+	                        <div class="labels-box">
+	                            <span class="red-bg">加价购</span>
+	                            <span class="red-bg">限时抢</span>
+	                            <span class="red-bg">满件包邮</span>
+	                        </div>
+	                        <div class="number-mix">
+	                            <em class="big-price">€238.08</em>
+	                            <i class="through-font">€258.08</i>
+	                        </div>
+	                        <div class="gray-p">参考价：¥1235.00</div>
+	                    </div>
+	                    <div class="shopping-cart">
+	                    	<span class="shopping-cart-btn"></span>
+	                    </div>
+					</div>
+					<div class="hidden-wrap">
+	                    <a href="javascript:void(0);" class="delete-btn">删除</a>
+					</div>
+				</li>
+				<li>
+					<div class="shown-wrap taken-out">
+						<div class="product-list-left">
+							<a href="#">
+								<img src="assets/img/browsingImg.png" alt="">
+	                        </a>
+	                        <div class="sell-tip sc-tip ">
+	                        	<p>比收藏时降 €5.00</p>
+	                        </div>
+                        	<div class="sell-tip gray-tip shown">
+                        		<p>已下架</p>
+                        	</div>
+						</div>
+						<div class="product-list-right">
+	                        <p class="big-title">
+	                            <a href="#">knoppers牛奶榛子巧克力威化饼干家庭装 24包knoppers牛奶榛子巧克力威化饼干家庭装 24包knoppers牛奶榛子巧克力威化饼干家庭装 24包</a>
+	                        </p>
+	                        <div class="labels-box">
+	                            <span class="red-bg">加价购</span>
+	                            <span class="red-bg">限时抢</span>
+	                            <span class="red-bg">满件包邮</span>
+	                        </div>
+	                        <div class="number-mix">
+	                            <em class="big-price">€238.08</em>
+	                            <i class="through-font">€258.08</i>
+	                        </div>
+	                        <div class="gray-p">参考价：¥1235.00</div>
+	                    </div>
+	                    <div class="shopping-cart">
+	                    	<span class="shopping-cart-btn"></span>
+	                    </div>
+					</div>
+					<div class="hidden-wrap">
+	                    <a href="javascript:void(0);" class="delete-btn">删除</a>
+					</div>
+				</li>
+				<li>
+					<div class="shown-wrap taken-out">
+						<div class="product-list-left">
+							<a href="#">
+								<img src="assets/img/browsingImg.png" alt="">
+	                        </a>
+	                        <div class="sell-tip sc-tip ">
+	                        	<p>比收藏时降 €5.00</p>
+	                        </div>
+                        	<div class="sell-tip gray-tip shown">
+                        		<p>已下架</p>
+                        	</div>
+						</div>
+						<div class="product-list-right">
+	                        <p class="big-title">
+	                            <a href="#">knoppers牛奶榛子巧克力威化饼干家庭装 24包knoppers牛奶榛子巧克力威化饼干家庭装 24包knoppers牛奶榛子巧克力威化饼干家庭装 24包</a>
+	                        </p>
+	                        <div class="labels-box">
+	                            <span class="red-bg">加价购</span>
+	                            <span class="red-bg">限时抢</span>
+	                            <span class="red-bg">满件包邮</span>
+	                        </div>
+	                        <div class="number-mix">
+	                            <em class="big-price">€238.08</em>
+	                            <i class="through-font">€258.08</i>
+	                        </div>
+	                        <div class="gray-p">参考价：¥1235.00</div>
+	                    </div>
+	                    <div class="shopping-cart">
+	                    	<span class="shopping-cart-btn"></span>
+	                    </div>
+					</div>
+					<div class="hidden-wrap">
+	                    <a href="javascript:void(0);" class="delete-btn">删除</a>
+					</div>
+				</li>
+			</ul>
+		</section>
+	</section>
+
+
+	<section class="no-browsing">
+		<p class="no-browsing-p">
+			您暂无浏览任何商品，先去<span class="blue-font">挑选商品</span>吧！
+		</p>
+	</section>
+</main>
+<section class="toTop">
+	<span class="toTop-btn"></span>
+</section>
+<section class="order-footer">
+	<p class="little-p footer-p">没有更多商品了~</p>
+</section>
+</body>
+</html>

@@ -1,0 +1,5 @@
+$defalutView: 750px;
+
+@function pxTorem($px) {
+    @return $px / $defalutView * 10rem;
+}

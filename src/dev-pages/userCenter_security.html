@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title><%= htmlWebpackPlugin.options.title %></title>
+	<script>
+	    (function (doc, win) {
+	        var docEl = doc.documentElement,
+	            isIOS = navigator.userAgent.match(/iphone|ipod|ipad/gi),
+	            dpr = isIOS ? Math.min(win.devicePixelRatio, 3) : 1,
+	            scale = 1 ,
+	            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize';
+
+	        docEl.dataset.dpr = dpr;
+
+	        var metaEl = doc.createElement('meta');
+	        metaEl.name = 'viewport';
+	        metaEl.content = 'initial-scale=' + scale + ', maximum-scale=' + scale + ', minimum-scale=' + scale;
+	        docEl.firstElementChild.appendChild(metaEl);
+
+	        var recalc = function () {
+	            var width = docEl.getBoundingClientRect().width;
+	            if (width / dpr > 750) {
+	                width = 750 * dpr;
+	            }
+	            if (width / dpr > 600) {
+	            width = 600 * dpr;
+	        }
+				var rem = width / 10;
+				docEl.style.fontSize = rem + 'px';
+	        };
+	        recalc();
+	        if (!doc.addEventListener) return;
+	        win.addEventListener(resizeEvt, recalc, false);
+	    })(document, window);
+</script>
+<meta name="apple-touch-fullscreen" content="yes" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="format-detection" content="telephone=no" />
+<meta property="qc:admins" content="362076462264125475456367" />
+<meta property="wb:webmaster" content="bcc00827e93d2eed" />	
+</head>
+<body class="gray-body">
+	<script src="vue.fastclick.js" charset="utf-8"></script>
+<!-- 头部组件 -->
+<header id="compHeader">
+	<head-component titles="安全中心"><head-component/>
+</header>
+<!-- 内容组件 -->
+<main id="userCenter-security" class="userCenter-security">
+	<section class="menu-box">
+		<ul>
+			<li class="menu-box-li">
+				<a href="#">
+					<span class="security-li">
+						<span class="security-li-le">
+							<img class="icon-img icon7" src="assets/img/icon/icon7.png" alt="">
+						</span>
+						<span class="security-li-rg">
+							<div class="back-p">修改登录密码</div>
+							<p class="gray-p">定期修改密码，保护账户安全</p>
+						</span>
+					</span>
+				</a>
+			</li>
+			<li class="menu-box-li">
+				<a href="#">
+					<span class="security-li">
+						<span class="security-li-le">
+							<img class="icon-img icon8" src="assets/img/icon/icon8.png" alt="">
+						</span>
+						<span class="security-li-rg">
+							<div class="back-p">
+								<i>绑定手机</i>
+								<i class="float-right gray-i">137***9899</i>
+								<!-- <i class="float-right red-i">未绑定</i> -->
+							</div>
+							<p class="gray-p">如您的验证手机已丢失或停用，请立即修改更换</p>
+						</span>
+					</span>
+				</a>
+			</li>
+			<li class="menu-box-li">
+				<a href="#">
+					<span class="security-li">
+						<span class="security-li-le">
+							<img class="icon-img icon9" src="assets/img/icon/icon9.png" alt="">
+						</span>
+						<span class="security-li-rg">
+							<div class="back-p">
+								<i>绑定邮箱</i>
+								<!-- <i class="float-right gray-i">45455***@qq.com</i> -->
+								<i class="float-right red-i">未绑定</i>
+							</div>
+							<p class="gray-p">完成验证后，你可以用该邮箱登录和找回密码</p>
+						</span>
+					</span>
+				</a>
+			</li>
+		</ul>
+	</section>
+</main>
+
+</body>
+</html>

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title><%= htmlWebpackPlugin.options.title %></title>
+	<script>
+	    (function (doc, win) {
+	        var docEl = doc.documentElement,
+	            isIOS = navigator.userAgent.match(/iphone|ipod|ipad/gi),
+	            dpr = isIOS ? Math.min(win.devicePixelRatio, 3) : 1,
+	            scale = 1 ,
+	            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize';
+
+	        docEl.dataset.dpr = dpr;
+
+	        var metaEl = doc.createElement('meta');
+	        metaEl.name = 'viewport';
+	        metaEl.content = 'initial-scale=' + scale + ', maximum-scale=' + scale + ', minimum-scale=' + scale;
+	        docEl.firstElementChild.appendChild(metaEl);
+
+	        var recalc = function () {
+	            var width = docEl.getBoundingClientRect().width;
+	            if (width / dpr > 750) {
+	                width = 750 * dpr;
+	            }
+	            if (width / dpr > 600) {
+	            width = 600 * dpr;
+	        }
+				var rem = width / 10;
+				docEl.style.fontSize = rem + 'px';
+	        };
+	        recalc();
+	        if (!doc.addEventListener) return;
+	        win.addEventListener(resizeEvt, recalc, false);
+	    })(document, window);
+</script>
+<meta name="apple-touch-fullscreen" content="yes" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="format-detection" content="telephone=no" />
+<meta property="qc:admins" content="362076462264125475456367" />
+<meta property="wb:webmaster" content="bcc00827e93d2eed" />	
+</head>
+<body class="gray-body">
+	<script src="vue.fastclick.js" charset="utf-8"></script>
+<!-- 头部 -->
+<section class="head-banner">
+	<section class="head-banner-box">
+		<header id="compHeader">
+			<div class="comp-header user-header">
+				<div class="header-button-left">
+					<a href="javascript:void(0);">返回</a>
+				</div>
+				<h1>用户中心</h1>
+				<div class="header-button-right">
+					<a href="javascript:void(0);"></a>
+				</div>
+			</div>
+		</header>
+		<section class="head-bar">
+			<div class="head-bar-left">
+				<a class="user-default-box" href="javascript:void(0);">
+					<img src="assets/img/default_user.png" alt="用户默认">
+				</a>
+				<em>一个人的世界</em>
+			</div>
+			<div class="head-bar-right">
+				<a href="javascript:void(0);" class="user-point-r"></a>
+			</div>
+		</section>
+	</section>
+	<div class="head-banner-imgbox">
+		<img class="head-banner-img" src="assets/img/user_bg.png" alt="">
+	</div>
+</section>
+<!-- 内容 -->
+
+<main id="userCenter">
+	<section class="main">
+		<section class="items-box">
+			<div class="items-box-li">
+				<a href="#" class="li-each">
+					<div class="li-each-top">
+						<span class="icon">
+							<i class="icon-tip">5</i>
+							<img class="icon-img1" src="assets/img/icon/icon1.png" alt="">
+						</span>
+					</div>
+					<h4 class="li-each-bottom">订单</h4>
+				</a>
+				<a href="#" class="li-each">
+					<div class="li-each-top">
+						<span class="icon">
+							<i class="icon-tip">5</i>
+							<img class="icon-img2" src="assets/img/icon/icon2.png" alt="">
+						</span>
+					</div>
+					<h4 class="li-each-bottom">优惠券</h4>
+				</a>
+				<a href="#" class="li-each">
+					<div class="li-each-top">
+						<span class="icon">
+							<i class="icon-tip">15</i>
+							<img class="icon-img3" src="assets/img/icon/icon3.png" alt="">
+						</span>
+					</div>
+					<h4 class="li-each-bottom">收藏夹</h4>
+				</a>
+			</div>
+
+			<div class="items-box-li">
+				<a href="#" class="li-each">
+					<div class="li-each-top">
+						<span class="icon">
+							<!-- <i class="icon-tip"></i> -->
+							<img class="icon-img4" src="assets/img/icon/icon4.png" alt="">
+						</span>
+					</div>
+					<h4 class="li-each-bottom">地址簿</h4>
+				</a>
+				<a href="#" class="li-each">
+					<div class="li-each-top">
+						<span class="icon">
+							<!-- <i class="icon-tip"></i> -->
+							<img class="icon-img5" src="assets/img/icon/icon5.png" alt="">
+						</span>
+					</div>
+					<h4 class="li-each-bottom">安全中心</h4>
+				</a>
+				<a href="#" class="li-each">
+					<div class="li-each-top">
+						<span class="icon">
+							<!-- <i class="icon-tip"></i> -->
+							<img class="icon-img6" src="assets/img/icon/icon6.png" alt="">
+						</span>
+					</div>
+					<h4 class="li-each-bottom">浏览足迹</h4>
+				</a>
+			</div>
+		</section>
+	</section>
+	<section class="menu-box padding20">
+		<ul>
+			<li class="menu-box-li">
+				<a href="#">MyQ&A</a>
+			</li>
+			<li class="menu-box-li">
+				<a href="#">关于BA</a>
+			</li>
+		</ul>
+	</section>
+</main>
+
+<section class="like-itmes">
+	<h2>猜你喜欢</h2>
+	<section class="like-itmes-list">
+		<ul>
+			<li>
+				<div class="list-wrap">
+					<div class="img-wrap">
+						<a href="#">
+							<img src="assets/img/menu-img.png" alt="">
+						</a>
+					</div>
+					<div class="labels-box">
+						<span class="red-bg">加价购</span>
+						<span class="red-bg">限时抢</span>
+						<span class="red-bg">满件包邮</span>
+					</div>
+					<p class="big-title">
+						<a href="#">knoppers牛奶榛子巧克力威化饼干家庭装 24包knoppers牛奶榛子巧克力威化饼干家庭装 24包knoppers牛奶榛子巧克力威化饼干家庭装 24包</a>
+					</p>
+					<div class="number-mix">
+						<em class="now-price">€238.08</em>
+						<i>€258.08</i>
+					</div>
+					<div class="gray-p">参考价：¥1235.00</div>
+				</div>
+			</li>
+			<li>
+				<div class="list-wrap">
+					<div class="img-wrap">
+						<a href="#">
+							<img src="assets/img/menu-img.png" alt="">
+						</a>
+					</div>
+					<div class="labels-box">
+						<span class="red-bg">加价购</span>
+						<span class="red-bg">限时抢</span>
+						<span class="red-bg">满件包邮</span>
+					</div>
+					<p class="big-title">
+						<a href="#">knoppers牛奶榛子巧克力威化饼干家庭装 24包</a>
+					</p>
+					<div class="number-mix">
+						<em class="now-price">€238.08</em>
+						<i>€258.08</i>
+					</div>
+					<div class="gray-p">参考价：¥1235.00</div>
+				</div>
+			</li>
+			<li>
+				<div class="list-wrap">
+					<div class="img-wrap">
+						<a href="#">
+							<img src="assets/img/menu-img.png" alt="">
+						</a>
+					</div>
+					<div class="labels-box">
+						<span class="red-bg">加价购</span>
+						<span class="red-bg">限时抢</span>
+						<span class="red-bg">满件包邮</span>
+					</div>
+					<p class="big-title">
+						<a href="#">knoppers牛奶榛子巧克力威化饼干家庭装 24包</a>
+					</p>
+					<div class="number-mix">
+						<em class="now-price">€238.08</em>
+						<i>€258.08</i>
+					</div>
+					<div class="gray-p">参考价：¥1235.00</div>
+				</div>
+			</li>
+			<li>
+				<div class="list-wrap">
+					<div class="img-wrap">
+						<a href="#">
+							<img src="assets/img/menu-img.png" alt="">
+						</a>
+					</div>
+					<div class="labels-box">
+						<span class="red-bg">加价购</span>
+						<span class="red-bg">限时抢</span>
+						<span class="red-bg">满件包邮</span>
+					</div>
+					<p class="big-title">
+						<a href="#">knoppers牛奶榛子巧克力威化饼干家庭装 24包</a>
+					</p>
+					<div class="number-mix">
+						<em class="now-price">€238.08</em>
+						<i>€258.08</i>
+					</div>
+					<div class="gray-p">参考价：¥1235.00</div>
+				</div>
+			</li>
+		</ul>
+	</section>
+</section>
+
+</body>
+</html>

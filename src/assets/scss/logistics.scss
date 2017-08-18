@@ -1,0 +1,114 @@
+/* 物流轨迹 */
+.logistics-message {
+	margin: pxTorem(20px);
+	overflow: hidden;
+	.path-ul {
+		margin-right: pxTorem(-12px);
+		position: relative;
+	}
+	.path-content {
+		margin-top: pxTorem(10px);
+		.path-item {
+			font-size: pxTorem(26px);
+			line-height: pxTorem(40px);
+			color: #999;
+			position: relative;
+			height: pxTorem(140px);
+			cursor: default;
+			&:last-child{
+				padding-bottom: pxTorem(20px);
+			}
+			&:first-child {
+				.address,
+				.remark,
+				.predict-time {
+					color: #333333;
+					font-weight: bold;
+				}
+				.dot {
+					background: #0b94d9;
+					&:after {
+						color: #fff;
+						content: "";
+						display: block;
+						width: pxTorem(18px);
+						height: pxTorem(18px);
+						border-radius: 50%;
+						background: #0b94d9;
+						position: absolute;
+						top: pxTorem(6px);
+						left: pxTorem(6px);
+						z-index: 13;
+					}
+				}
+			}
+		}
+		.path-content-left {
+			width: pxTorem(100px);
+			box-sizing: border-box;
+			position: relative;
+			display: inline-block;
+			float: left;
+			.dot {
+				width: pxTorem(30px);
+				height: pxTorem(30px);
+				border-radius: 50%;
+				background: #e1e1e1;
+				position: absolute;
+				top: pxTorem(3px);
+				left: pxTorem(2px);
+				z-index: 11;
+				&:before {
+					color: #fff;
+					content: "";
+					display: block;
+					width: pxTorem(22px);
+					height: pxTorem(22px);
+					border-radius: 50%;
+					background: #fff;
+					position: absolute;
+					top: pxTorem(4px);
+					left: pxTorem(4px);
+					z-index: 12;
+				}
+			}
+			.under-line {
+				height: pxTorem(90px);
+				position: absolute;
+				width: pxTorem(0px);
+				border-left: 1px solid #e1e1e1;
+				top: pxTorem(40px);
+				left: pxTorem(14px);
+				z-index: 1;
+			}
+		}
+		.path-content-right {
+			width: pxTorem(620px);
+			box-sizing: border-box;
+			float: left;
+			margin-left: pxTorem(80px);
+		}
+		.predict {
+			display: block;
+			text-align: left;
+		}
+		.predict-time{
+			color: #999999;
+			line-height: pxTorem(16px);
+			font-size: pxTorem(24px);
+			margin-top: pxTorem(10px);
+		}
+		.remark,
+		.predict-time {
+			text-align: left;
+			font-size: pxTorem(24px);
+		}
+		.remark {
+			display: inline;
+			font-size: pxTorem(26px);
+			a {
+				color: #4aa6de;
+			}
+		}
+	}
+}

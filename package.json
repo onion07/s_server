@@ -1,0 +1,53 @@
+{
+  "name": "service-project",
+  "description": "A Vue.js project",
+  "version": "1.0.0",
+  "author": "chen.jinsheng <jinsheng.chen@haituncun.com>",
+  "private": true,
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --color --hot --port=8082 --content-base .",
+    "build": "cross-env NODE_ENV=production webpack --config webpack.config.build.js -w  --progress --display-modules --color"
+  },
+  "dependencies": {
+    "fastclick": "^1.0.6",
+    "qs": "^6.5.0",
+    "vue": "^2.3.3",
+    "vue-js-modal": "^1.2.8",
+    "vuex": "^2.3.1"
+  },
+  "devDependencies": {
+    "axios": "^0.16.2",
+    "babel-core": "^6.0.0",
+    "babel-loader": "^6.0.0",
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
+    "babel-preset-env": "^1.5.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "chunk-manifest-webpack-plugin": "^1.1.1",
+    "clean-webpack-plugin": "^0.1.16",
+    "cross-env": "^3.0.0",
+    "css-loader": "^0.28.4",
+    "eslint-loader": "^1.9.0",
+    "extract-text-webpack-plugin": "^2.1.2",
+    "file-loader": "^0.9.0",
+    "html-webpack-harddisk-plugin": "^0.1.0",
+    "html-webpack-plugin": "^2.29.0",
+    "inline-manifest-webpack-plugin": "^3.0.1",
+    "jquery": "^3.2.1",
+    "node-sass": "^4.5.0",
+    "postcss": "^6.0.8",
+    "postcss-loader": "^2.0.6",
+    "postcss-sprite": "^2.2.1",
+    "sass-loader": "^5.0.1",
+    "style-loader": "^0.18.2",
+    "url-loader": "^0.5.9",
+    "vue-loader": "^13.0.0",
+    "vue-style-loader": "^3.0.1",
+    "vue-template-compiler": "^2.3.3",
+    "vue-template-es2015-compiler": "^1.5.3",
+    "webpack": "^2.6.1",
+    "webpack-chunk-hash": "^0.4.0",
+    "webpack-dev-server": "^2.4.5",
+    "webpack-spritesmith": "^0.3.3"
+  }
+}

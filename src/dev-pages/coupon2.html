@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title><%= htmlWebpackPlugin.options.title %></title>
+	<script>
+	    (function (doc, win) {
+	        var docEl = doc.documentElement,
+	            isIOS = navigator.userAgent.match(/iphone|ipod|ipad/gi),
+	            dpr = isIOS ? Math.min(win.devicePixelRatio, 3) : 1,
+	            scale = 1 ,
+	            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize';
+
+	        docEl.dataset.dpr = dpr;
+
+	        var metaEl = doc.createElement('meta');
+	        metaEl.name = 'viewport';
+	        metaEl.content = 'initial-scale=' + scale + ', maximum-scale=' + scale + ', minimum-scale=' + scale;
+	        docEl.firstElementChild.appendChild(metaEl);
+
+	        var recalc = function () {
+	            var width = docEl.getBoundingClientRect().width;
+	            if (width / dpr > 750) {
+	                width = 750 * dpr;
+	            }
+	            if (width / dpr > 600) {
+	            width = 600 * dpr;
+	        }
+				var rem = width / 10;
+				docEl.style.fontSize = rem + 'px';
+	        };
+	        recalc();
+	        if (!doc.addEventListener) return;
+	        win.addEventListener(resizeEvt, recalc, false);
+	    })(document, window);
+</script>
+<meta name="apple-touch-fullscreen" content="yes" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="format-detection" content="telephone=no" />
+<meta property="qc:admins" content="362076462264125475456367" />
+<meta property="wb:webmaster" content="bcc00827e93d2eed" />	
+</head>
+<body class="gray-body">
+	<script src="vue.fastclick.js" charset="utf-8"></script>
+<!-- 头部组件 -->
+<header id="compHeader">
+	<head-component titles="我的优惠券"><head-component/>
+</header>
+<!-- 内容 -->
+
+<main class="coupon-block full-block">
+	<section class="top-tab">
+		<div class="top-tab-wrap white-block">
+			<a class="a-tab cur" href="javascript:void(0);">未使用<span>(3)</span></a>
+			<a class="a-tab" href="javascript:void(0);">已使用</a>
+			<a class="a-tab" href="javascript:void(0);">已过期</a>
+		</div>
+	</section>
+	<section class="coupon-content-block">
+		<section class="text-button-block margin-btm20">
+			<input class="long-text" type="text" placeholder="请输入优惠码">
+			<button class="normal-btn">绑定</button>
+		</section>
+		<section class="hasnot-used up-down-block">
+			<ul>
+				<li class="coupon-li will-expire">
+					<div class="tip-bar">即将过期</div>
+					<div class="up-block">
+						<div class="up-block-sum">
+							<em class="big-em">15</em>€
+						</div>
+						<div class="up-block-p">
+							【新人礼包】无金额门槛
+						</div>
+					</div>
+					<div class="down-block">
+						<ul>
+							<li>
+								<div class="shown-box">
+									<span class="li-left">券&nbsp;类&nbsp;型：</span>
+									<span class="li-right">商品券</span>
+								</div>
+							</li>
+							<li>
+								<div class="shown-box">
+									<span class="li-left">有&nbsp;效&nbsp;期：</span>
+									<span class="li-right">2017-06-19至2017-07-19</span>
+								</div>
+							</li>
+							<li>
+								<div class="shown-box">
+									
+									<span class="li-left">使用范围：</span>
+									<span class="li-right">全场通用</span>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<li class="coupon-li select">
+					<div class="tip-bar">即将过期</div>
+					<div class="up-block">
+						<div class="up-block-sum">
+							<em class="big-em">95折</em>
+						</div>
+						<div class="up-block-p">
+							【新人礼包】无金额门槛
+						</div>
+					</div>
+					<div class="down-block">
+						<ul>
+							<li>
+								<div class="shown-box">
+									<span class="li-left">券&nbsp;类&nbsp;型：</span>
+									<span class="li-right">商品券</span>
+								</div>
+							</li>
+							<li>
+								<div class="shown-box">
+									<span class="li-left">有&nbsp;效&nbsp;期：</span>
+									<span class="li-right">2017-06-19至2017-07-19</span>
+								</div>
+							</li>
+							<li>
+								<div class="shown-box">
+									<span class="li-left">使用范围：</span>
+									<span class="li-right">指定商品使用</span>
+								</div>
+								<p class="extro">
+									化妆品、母婴类除外
+								</p>
+							</li>
+						</ul>
+					</div>
+				</li>
+
+			</ul>
+			
+		</section>	
+	</section>
+	 
+
+	<section class="no-browsing">
+		<p class="no-browsing-p">
+			你暂时没有优惠券！
+		</p>
+	</section>
+</main>
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+
+/* 帮助中心 */
+.menu-box-li{
+	a{
+		display: flex;
+	}
+}
+.li-left-wrap{
+	flex: 1;
+	display: block;
+	height: pxTorem(100px);
+	line-height: pxTorem(100px);
+	@extend .font28;
+
+}
+/* 帮助中心- 用户设置 */
+.li-right-wrap{
+	flex: 1;
+	display: block;
+	padding-right: pxTorem(50px);
+	height: pxTorem(100px);
+	line-height: pxTorem(100px);
+	text-align: right;
+	@extend .fontgray24;
+
+}
+.userCenter-setting{
+	.little-userImg{
+		width: pxTorem(70px);
+		height: pxTorem(70px);
+		vertical-align: middle;
+	}
+}
+.litte-btn{
+	margin-top: pxTorem(60px);
+	text-align: center;
+	.out-sign{
+		width: pxTorem(340px);
+		height: pxTorem(80px);
+		line-height: pxTorem(80px);
+		font-size: pxTorem(28px);
+		border: 0;
+		outline: 0;
+		color: #fff;
+		background: #6fb33e;
+		display: inline-block;
+	}
+}
+/* 帮助中心- 安全中心 */
